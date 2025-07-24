@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: open-shop-app
+  labels:
+    app: open-shop-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: open-shop-app
+  template:
+    metadata:
+      labels:
+        app: open-shop-app
+    spec:
+      containers:
+        - name: open-shop-app
+          image: kabhishek027/open-shop-app:latest
+          ports:
+            - containerPort: 80
+
